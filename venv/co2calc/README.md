@@ -27,4 +27,9 @@
    git clone [https://github.com/HeshamElsenosey/Carbon_Emission.git](https://github.com/HeshamElsenosey/Carbon_Emission.git)
    cd Carbon_Emission
 
-   
+
+2. **Create the virtual environment:**
+   python -m venv venv
+source venv/scripts/activate  # لنظام ويندوز
+
+
