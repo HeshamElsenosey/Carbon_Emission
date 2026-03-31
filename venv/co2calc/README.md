@@ -28,8 +28,10 @@
    cd Carbon_Emission
 
 
-2. **Create the virtual environment:**
+## 2. Create the virtual environment:
+
+1. **إنشاء البيئة الافتراضية:**
+   ```bash
    python -m venv venv
-source venv/scripts/activate  # لنظام ويندوز
-
-
+تفعيل البيئة الإفتراضية :
+source venv/Scripts/activate
