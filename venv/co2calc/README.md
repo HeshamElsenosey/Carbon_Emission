@@ -35,3 +35,10 @@
    python -m venv venv
 تفعيل البيئة الإفتراضية :
 source venv/Scripts/activate
+
+
+
+### 3. تثبيت المكتبات (Installation)
+قم بتثبيت كافة المكتبات اللازمة للمشروع باستخدام الأمر التالي:
+```bash
+pip install -r requirements.txt
