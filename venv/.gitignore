@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+.env
+media/
+!media/.gitkeep
+# ملفات النظام والـ Python
+__pycache__/
+*.py[cod]
+venv/
+.vscode/
