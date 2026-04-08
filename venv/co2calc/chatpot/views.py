@@ -29,7 +29,7 @@ class ChatBotView(APIView):
         )
 
         try:
-            # 2. البحث التلقائي عن الموديل المتاح في حسابك (لتجنب خطأ 404)
+            # 2. البحث التلقائي عن الموديل المتاح في الحساب الخاص بى (لتجنب خطأ 404)
             model_list = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
             
             # محاولة اختيار gemini-pro كخيار أول لأنه الأكثر استقراراً في منطقتنا

@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'co2calc.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-"""
-* تم نقل هذين السطرين إلى بداية الملف من أجل التنسيق والترتيب
-# import os
-# from dotenv import load_dotenv
 
-"""
+
 # تحميل البيانات من ملف .env
 load_dotenv()
 
@@ -160,8 +156,6 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
-# settings.py
-import os
-
+# media files (user uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
