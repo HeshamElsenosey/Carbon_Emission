@@ -8,7 +8,7 @@ class EmissionEntry(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE,
-        related_name='emissions'
+        related_name='emissions',
     )
     
     #*   تصنيف الانبعاثات (كهرباء، غاز، وقود، إلخ)

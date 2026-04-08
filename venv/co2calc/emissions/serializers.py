@@ -96,11 +96,11 @@ class EmissionSerializer(serializers.ModelSerializer):
         unit = validated_data.get('unit')
         
         # 2. استدعاء دالة الحساب (التي تحتوي على تحويل الجالون والمعاملات)
-        # تأكد أن دالة calculate_carbon موجودة في نفس الكلاس لديك
+        # تأكد أن دالة calculate_carbon موجودة في نفس الكلاس 
         validated_data['carbon_footprint'] = self.calculate_carbon(category, value, unit)
         
         # 3. ربط العملية بالمستخدم الذي قام بتسجيل الدخول حالياً
         validated_data['user'] = self.context['request'].user
         
-        # 4. حفظ البيانات وإرجاع النتيجة (هذا السطر يكون آاااخر سطر في الدالة)
+        # 4. حفظ البيانات وإرجاع النتيجة (هذا السطر يكون اخر سطر في الدالة)
         return super().create(validated_data)

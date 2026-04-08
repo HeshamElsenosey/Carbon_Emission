@@ -20,7 +20,7 @@ class EmissionListCreateView(generics.ListCreateAPIView):
         # المستخدم يرى فقط العمليات الخاصة بشركته/حسابه الشخصي
         return EmissionEntry.objects.filter(user=self.request.user)
 
-    # --- أضف هذه الدالة هنا لدعم الإدخال المتعدد ---
+    # ---  هذه الدالة هنا لدعم الإدخال المتعدد ---
     def create(self, request, *args, **kwargs):
         is_many = isinstance(request.data, list)
         serializer = self.get_serializer(data=request.data, many=is_many)
@@ -35,16 +35,9 @@ class EmissionListCreateView(generics.ListCreateAPIView):
             serializer.save(user=request.user)
             
         return Response(serializer.data, status=201)
-    # ---------------------------------------------
-    # def perform_create(self, serializer):
-    #     # نمرر المستخدم الحالي للـ Serializer أثناء الحفظ
-    #     serializer.save(user=self.request.user)
+    
+    # ----------------------------------------------------------------------------------------
 
-
-#dashboard view
-# from django.db.models import Sum
-# from rest_framework.views import APIView
-# from rest_framework.response import Response
 
 class EmissionDashboardView(APIView):
     permission_classes = [permissions.IsAuthenticated]
