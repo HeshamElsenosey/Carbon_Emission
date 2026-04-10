@@ -24,8 +24,7 @@
 
 1. **تحميل المشروع:**
    ```bash
-   git clone [https://github.com/HeshamElsenosey/Carbon_Emission.git](https://github.com/HeshamElsenosey/Carbon_Emission.git)
-   cd Carbon_Emission
+   git clone [https://github.com/HeshamElsenosey/Carbon_Emission.git]
 
 
 ## 2. Create the virtual environment:
