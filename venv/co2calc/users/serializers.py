@@ -31,12 +31,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         return user
     
-# class ProfileSerializer(serializers.ModelSerializer):
-#     username = serializers.ReadOnlyField(source='user.username') # لعرض الاسم مع الصورة
 
-#     class Meta:
-#         model = Profile
-#         fields = ['username', 'image', 'bio']
 
 
 class ProfileSerializer(serializers.ModelSerializer):
