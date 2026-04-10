@@ -149,13 +149,24 @@ STATIC_URL = 'static/'
 #user model
 AUTH_USER_MODEL = 'users.User'
 #jwt settings
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#     ),
+#     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+# }
+# أضف هذا في ملف الإعدادات
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ),
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    )
 }
+
+# لجعل تسجيل الدخول بالإيميل (اختياري لو أردت دعم الإيميل واليوزر معاً)
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # media files (user uploads)
 MEDIA_URL = '/media/'

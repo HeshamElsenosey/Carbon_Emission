@@ -6,6 +6,9 @@ from PIL import Image
 
 
 class User(AbstractUser):
+    email = models.EmailField(unique=True, verbose_name="البريد الإلكتروني")
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'full_name']
     #todo   1. المعلومات الشخصية فى صفحة التسجيل 
 
     full_name = models.CharField(max_length=255, verbose_name="الاسم الكامل")
