@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from datetime import timedelta
 """
 Django settings for co2calc project.
 
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -171,3 +173,24 @@ AUTHENTICATION_BACKENDS = [
 # media files (user uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CORS_ALLOW_ALL_ORIGINS = True  # للتطوير فقط
+
+
+# test
+
+
+SIMPLE_JWT = {
+    # مدة صلاحية توكن الوصول (Access Token) - نجعله يوم كامل مثلاً للعرض
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    
+    # مدة صلاحية توكن التحديث (Refresh Token) - نجعله 7 أيام
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    
+    # إعدادات إضافية مفيدة
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY, # بيستخدم السيكرت كي اللي لسه مصلحينه
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
